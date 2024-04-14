@@ -18,13 +18,13 @@ var heatmapData = [
     new google.maps.LatLng(37.785, -122.435)
   ];
   
-  var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
+  var irvine = new google.maps.LatLng(33.6424, -117.8417);
   
   map = new google.maps.Map(document.getElementById('map'), {
-    center: sanFrancisco,
+    center: irvine,
     zoom: 13,
-    mapTypeId: 'satellite'
-  });
+
+    });
   
   var heatmap = new google.maps.visualization.HeatmapLayer({
     data: heatmapData
