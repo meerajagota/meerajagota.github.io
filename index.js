@@ -1,7 +1,7 @@
 function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 60.6405, lng: -117.8389 }, 
+        center: { lat: 33.6405, lng: -117.8389 }, 
         zoom: 12 // Zoom level
     });
 
@@ -28,7 +28,7 @@ function initMap() {
             }
         });
     });
-    console.log(heatmap.length);
+
     
     // Create Heatmap Layer
     var heatmap = new google.maps.visualization.HeatmapLayer({
