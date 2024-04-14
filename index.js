@@ -1,3 +1,13 @@
+var initialIcon = {
+    url: 'initial_icon.png', // URL of the initial icon image
+    scaledSize: new google.maps.Size(40, 40), // Size of the icon
+};
+
+var alternateIcon = {
+    url: 'alternate_icon.png', // URL of the alternate icon image
+    scaledSize: new google.maps.Size(40, 40), // Size of the icon
+};
+
 function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
