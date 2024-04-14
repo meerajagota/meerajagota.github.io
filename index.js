@@ -1,13 +1,3 @@
-var initialIcon = {
-    url: 'initial_icon.png', // URL of the initial icon image
-    scaledSize: new google.maps.Size(40, 40), // Size of the icon
-};
-
-var alternateIcon = {
-    url: 'alternate_icon.png', // URL of the alternate icon image
-    scaledSize: new google.maps.Size(40, 40), // Size of the icon
-};
-
 function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -17,8 +7,7 @@ function initMap() {
 
     var aqi_data = [
         { address: "University of California, Irvine", AQI: 50 },
-        { address: "University of California, Berkeley", AQI: 3 },
-        { address: "Los Angeles", AQI: 100 }
+        { address: "University of California, Berkeley", AQI: 3 }
         // Add more data as needed...
     ];
     
@@ -35,7 +24,7 @@ function initMap() {
                 var latLng = new google.maps.LatLng(location.lat(), location.lng());
                 // Normalize AQI index and add to heatmap data
                 var intensity = record.AQI / 100; // Normalize to 0-1 range
-                heatmapData.push({ location: latLng });
+                heatmapData.push({ location: latLng, weight: intensity });
             }
         });
     });
