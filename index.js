@@ -27,7 +27,8 @@ var heatmapData = [
     });
   
   var heatmap = new google.maps.visualization.HeatmapLayer({
-    data: heatmapData
+    data: heatmapData,
+    radius: 30
   });
   heatmap.setMap(map);
 
