@@ -5,6 +5,10 @@ function initMap() {
         zoom: 12 // Zoom level
     });
 
+
+    // ADD AQI's
+
+
     var aqi_data = [
         { address: "University of California, Irvine", AQI: 50 },
         { address: "University of California, Berkeley", AQI: 3 }
@@ -24,7 +28,7 @@ function initMap() {
                 var latLng = new google.maps.LatLng(location.lat(), location.lng());
                 // Normalize AQI index and add to heatmap data
                 var intensity = record.AQI / 100; // Normalize to 0-1 range
-                heatmapData.push({ location: latLng, weight: intensity });
+                heatmapData.push({ location: latLng });
             }
         });
     });
@@ -40,5 +44,9 @@ function initMap() {
 
     // Add Heatmap Layer to the Map
     heatmap.setMap(map);
+
+
+    // ADD CONSTRUCTION SITES
+
 
 }
