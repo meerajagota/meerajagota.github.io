@@ -1,6 +1,16 @@
 function initMap() {
 
     /* Data points defined as an array of LatLng objects */
+    fetch('air_pollution.csv')
+    .then(response => response.text())
+    .then(csvData => {
+        // Parse and process the CSV data
+        console.log(csvData);
+    })
+    .catch(error => {
+        console.error('Error loading CSV file:', error);
+    });
+
     const lines = csvData.split('\n');
     const headers = lines[0].split(',');
     const heatmapData = [];
