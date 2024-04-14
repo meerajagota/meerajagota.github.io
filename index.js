@@ -28,7 +28,7 @@ function initMap() {
             }
         });
     });
-    console.log(heatmap.length)
+    console.log(heatmap.length);
     
     // Create Heatmap Layer
     var heatmap = new google.maps.visualization.HeatmapLayer({
