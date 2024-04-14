@@ -28,7 +28,9 @@ var heatmapData = [
   
   var heatmap = new google.maps.visualization.HeatmapLayer({
     data: heatmapData,
-    radius: 30
+    radius: 100,
+    opacity: 0.7 // Adjust opacity for visibility
+
   });
   heatmap.setMap(map);
 
