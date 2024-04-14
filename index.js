@@ -34,7 +34,8 @@ function initMap() {
     var heatmap = new google.maps.visualization.HeatmapLayer({
         data: heatmapData,
         dissipating: true,
-        radius: 20 // Adjust radius as needed
+        radius: 30, // Adjust radius to control blending
+        opacity: 0.7, // Adjust opacity for visibility
     });
 
     // Add Heatmap Layer to the Map
