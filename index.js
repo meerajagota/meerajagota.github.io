@@ -17,7 +17,8 @@ function initMap() {
 
     var aqi_data = [
         { address: "University of California, Irvine", AQI: 50 },
-        { address: "University of California, Berkeley", AQI: 3 }
+        { address: "University of California, Berkeley", AQI: 3 },
+        { address: "Los Angeles", AQI: 100 }
         // Add more data as needed...
     ];
     
