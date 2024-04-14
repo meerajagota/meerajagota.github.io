@@ -34,7 +34,7 @@ function initMap() {
                 var latLng = new google.maps.LatLng(location.lat(), location.lng());
                 // Normalize AQI index and add to heatmap data
                 var intensity = record.AQI / 100; // Normalize to 0-1 range
-                heatmapData.push({ location: latLng, weight: intensity });
+                heatmapData.push({ location: latLng });
             }
         });
     });
