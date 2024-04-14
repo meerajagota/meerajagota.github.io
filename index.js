@@ -1,52 +1,35 @@
 function initMap() {
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 33.6405, lng: -117.8389 }, 
-        zoom: 12 // Zoom level
-    });
-
-
-    // ADD AQI's
-
-
-    var aqi_data = [
-        { address: "University of California, Irvine", AQI: 50 },
-        { address: "University of California, Berkeley", AQI: 3 }
-        // Add more data as needed...
-    ];
-    
-    
-    
-    // Geocode addresses and prepare data structure
-    var heatmapData = [];
-    aqi_data.forEach(function(record) {
-        // Use geocoding service to convert address to coordinates
-        var geocoder = new google.maps.Geocoder();
-        geocoder.geocode({ address: record.address }, function(results, status) {
-            if (status === google.maps.GeocoderStatus.OK && results[0]) {
-                var location = results[0].geometry.location;
-                var latLng = new google.maps.LatLng(location.lat(), location.lng());
-                // Normalize AQI index and add to heatmap data
-                var intensity = record.AQI / 100; // Normalize to 0-1 range
-                heatmapData.push({ location: latLng });
-            }
-        });
-    });
-
-    
-    // Create Heatmap Layer
-    var heatmap = new google.maps.visualization.HeatmapLayer({
-        data: heatmapData,
-        dissipating: true,
-        radius: 30, // Adjust radius to control blending
-        opacity: 0.7, // Adjust opacity for visibility
-    });
-
-    // Add Heatmap Layer to the Map
-    heatmap.setMap(map);
-
-
-    // ADD CONSTRUCTION SITES
+    /* Data points defined as an array of LatLng objects */
+var heatmapData = [
+    new google.maps.LatLng(37.782, -122.447),
+    new google.maps.LatLng(37.782, -122.445),
+    new google.maps.LatLng(37.782, -122.443),
+    new google.maps.LatLng(37.782, -122.441),
+    new google.maps.LatLng(37.782, -122.439),
+    new google.maps.LatLng(37.782, -122.437),
+    new google.maps.LatLng(37.782, -122.435),
+    new google.maps.LatLng(37.785, -122.447),
+    new google.maps.LatLng(37.785, -122.445),
+    new google.maps.LatLng(37.785, -122.443),
+    new google.maps.LatLng(37.785, -122.441),
+    new google.maps.LatLng(37.785, -122.439),
+    new google.maps.LatLng(37.785, -122.437),
+    new google.maps.LatLng(37.785, -122.435)
+  ];
+  
+  var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
+  
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: sanFrancisco,
+    zoom: 13,
+    mapTypeId: 'satellite'
+  });
+  
+  var heatmap = new google.maps.visualization.HeatmapLayer({
+    data: heatmapData
+  });
+  heatmap.setMap(map);
 
 
 }
