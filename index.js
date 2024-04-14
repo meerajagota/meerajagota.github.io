@@ -28,8 +28,8 @@ var heatmapData = [
   
   var heatmap = new google.maps.visualization.HeatmapLayer({
     data: heatmapData,
-    radius: 100,
-    opacity: 0.7 // Adjust opacity for visibility
+    radius: 70,
+    opacity: 0.25 // Adjust opacity for visibility
 
   });
   heatmap.setMap(map);
